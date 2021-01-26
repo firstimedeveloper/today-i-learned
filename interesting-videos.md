@@ -5,4 +5,4 @@ Here's a list that I have watched when slacking off, but turned out to be extrem
   > Memorable question (paraphrasing): what distinguishes you from the other so called 'coding monks' that you were able to rise above the ranks in argurabaly one of the best companies right now?
 
   > (Paraphrasing) Being drawn to interesting projects, parts in the industry that weren't necessary the hot thing, but they were something that turned out to be meaningful. Focused on solving the problem for the team. Devoted on really working for the team. "If you're not too worried about getting there, but you're just trying to do the job, at times it turns out that people see in you, maybe being the solution to a problem they have to solve, which is get something led."
-
+- [Talk on vim](https://www.youtube.com/watch?v=XA2WjJbmmoM). Great talk "to do 90% of what plugins do (with just vim)"
