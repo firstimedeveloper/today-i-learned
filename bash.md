@@ -15,3 +15,23 @@ To delete the symlink, just removing the newly created directory works fine usin
 rm <path-to-symlink>
 rm ~/win_dev
 ```
+
+## tldr (too long, didn't read)
+A very useful command line tool similar to man or -h but shows basic usage examples in a concise manner
+```
+brew install tldr
+tldr zip
+```
+
+## zip
+Basic functionality of zipping up multiple files or directories
+```
+// This will create a zip file named project1.zip in the current directory, containing all the files with the .hdl extension. (.hdl was used for a coursera course called nand2tetris)
+zip project1.zip *.hdl
+// Adding -r will recursively search through directories as well.
+zip -r project1.zip *.hdl
+```
+
+Using tldr for other use cases will be of great help.
+
+
