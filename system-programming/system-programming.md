@@ -60,5 +60,6 @@ Output:
 ```
 Unions in c are a special data type where different data types are allowed to be stored in the same memory location. A union can be defined with many members, but only one member can contain a value at any given time. [sort of paraphrased from tutorialspoint.com](https://tutorialspoint.com/cprogramming/c_unions.htm)
 
-In the simple program above, u.i is assigned a hexadecimal value of 0x12345678, and upon printing the value stored in u.c[0..3] of the same union, the output of the program can be seen to be the above hexadecimal value, *reversed*.
+In the simple program above, u.i is assigned a hexadecimal value of `0x12345678`, and upon printing the value stored in `u.c[0..3]` of the same union, the output of the program can be seen to be the above hexadecimal value, *reversed*.
+
 ---
