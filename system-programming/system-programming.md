@@ -11,7 +11,7 @@ Example
 - A variable `x` has a 4-byte representation of 0x01234567
 - Address given by `&x` is `0x100`
 
-!(Byte Ordering example)[images/byte-ordering-endian.png]
+![Byte Ordering example](images/byte-ordering-endian.png)
 
 ## Code to Print Byte Representation of Data
 - Casting pointer to an **unsigned char\*** allows treatment a a byte array.
