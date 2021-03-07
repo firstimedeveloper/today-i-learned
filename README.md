@@ -3,4 +3,4 @@ This repository contains little bits of information or technology I learned that
 - [Interesting videos](interesting-videos.md)
 - [bash](bash.md)
 - [vim](vim.md)
-- [system programming](system-programming.md)
+- [system programming](system-programming)
