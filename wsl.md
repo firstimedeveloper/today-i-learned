@@ -26,4 +26,4 @@ Now, in `~/.zshrc`, enter the following:
 fpath=(~/.my_zsh_functions "${fpath[@]}")
 autoload -Uz clip
 ```
-Now clip `<filename>` can be used to execute the whole command!
+Now `clip <filename>` can be used to execute the whole command!
