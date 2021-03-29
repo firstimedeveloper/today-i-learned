@@ -4,3 +4,4 @@ This repository contains little bits of information or technology I learned that
 - [bash](bash.md)
 - [vim](vim.md)
 - [system programming](system-programming)
+- [wsl](wsl.md)
