@@ -34,4 +34,16 @@ zip -r project1.zip *.hdl
 
 Using tldr for other use cases will be of great help.
 
+## renaming batch files
+There are two packages with the name `rename`. perl-rename and rename on util-linux. It can be quite confusing since both packages use the same command. 
+FYI, `tldr rename` is the util-linux version, and `tldr perl-rename` or `tldr file-rename` is the other version.
+The following is applicable to the perl version.
+```
+rename [expression] [files]
+# add prefix_ to all files within the current dir
+rename 's/^/prefix_' * 
+# add an extension to all files
+rename 's/$/.c' *
 
+# the option -n can be used to see how the command will turn out without actually executing the command.
+```
