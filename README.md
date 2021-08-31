@@ -1,8 +1,10 @@
 # Today I Learned
 This repository contains little bits of information or technology I learned that day. It may or may not be a daily thing.
-- [Interesting videos](interesting-videos.md)
+- [Interesting videos](interesting_videos.md)
 - [bash](bash.md)
 - [vim](vim.md)
-- [system programming](system-programming)
+- [system programming](system_programming)
 - [wsl](wsl.md)
 - [Makefile](makefile.md)
+- [42 Seoul](42_seoul)
+	- [gnl](42_seoul/gnl.md)

@@ -1,9 +1,9 @@
-# get-next-line (gnl)
+# get next line (gnl)
 ```c
 // function prototype:
 char *get_next_line(int fd);
 ```
-get-next-line is a function that takes in a file descripter, and returns the 'next line' each time the function is called. The program should be compiled with the gcc flag `-D BUFFER_SIZE=<some-number>`. The user of the function may change the value of `BUFFER_SIZE` accordingly. 
+`get_next_line` is a function that takes in a file descripter, and returns the 'next line' each time the function is called. The program should be compiled with the gcc flag `-D BUFFER_SIZE=<some-number>`. The user of the function may change the value of `BUFFER_SIZE` accordingly. 
 
 In case of error, or EOF, the function will return a NULL value.
 
@@ -21,7 +21,7 @@ As a bonus, the function is able to switch between various file descripters with
 int main()
 {
 	char	*line;
-	int		fd;
+	int	fd;
 
 	fd = open("path/to/textfile.txt", O_RDONLY);
 	while ((line = get_next_line(fd))
