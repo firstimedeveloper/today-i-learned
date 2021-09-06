@@ -6,5 +6,6 @@ This repository contains little bits of information or technology I learned that
 - [system programming](system_programming)
 - [wsl](wsl.md)
 - [Makefile](makefile.md)
+- [debian](debian.md)
 - [42 Seoul](42_seoul)
 	- [gnl](42_seoul/gnl.md)
