@@ -2,6 +2,11 @@
 ---
 ## Instructions
 Instructions are stored in memory in a binary format. In MIPS architecture, each instruction is 4 bytes (32 bits) long. In CISC computers, each instructions can vary from 1 byte to 15 bytes. These variable sizes can lead to more efficent use of space, and faster code. However a lot of work has to be done to figure out the size of the instruction, and the location of the next instruction. In comparison, in MIPS or other RISC computers, the size of each instruction is predetermined which means that there will be 'wasted' bits in some instructons. However, the overall computer architecher is much simpler which by itself is a great advantage.
+
+nop: no operation
+In binary: 0000 0000 0000 0000 0000 0000 0000 0000 
+The above instruction is technically `sll $0, $0, 0`. This instruction does nothing as left shifting 0 of a value in register 0 does not do anything. The above instruction can be used to perhaps delay the instructions in the CPU.
+
 ### MIPS I-format Instructions
 
 In binary format:\
@@ -69,3 +74,8 @@ If the result of the multiplication is greater than 32 bits, the overflowed bits
 `div $r, $s` can be used to divide the value in register r by the value in register s. The result will go into register `LO` and the remainder into `HI`.
 
 The instructions `mflo` and `mfhi` can subsequently be used to make use of the resulting values.
+
+#### Shift
+Logical shift and Arithmetic shift.
+Logical right shift can only be used with unsigned numbersas the MSB in signed numbers represents the sign.
+Arithmetic right shift can be used here, where all the bits except the sign bit is shifted right.
