@@ -10,8 +10,8 @@ The above instruction is technically `sll $0, $0, 0`. This instruction does noth
 ### MIPS I-format Instructions
 
 In binary format:\
-op|rs|rt|constant or address\
- 6| 5| 5| 				  16
+op	|rs	|rt	|constant or address\
+6	|5	|5	|16
 
 The instruction `addi $t0, $t1, 0x123` is represented as follows:
 
