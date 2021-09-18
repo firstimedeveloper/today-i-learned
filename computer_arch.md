@@ -6,25 +6,25 @@ Instructions are stored in memory in a binary format. In MIPS architecture, each
 
 In binary format:\
 op|rs|rt|constant or address\
- 6| 5| 5| 				  16\
+ 6| 5| 5| 				  16
 
 The instruction `addi $t0, $t1, 0x123` is represented as follows:
 
 binary: 0010 0001 0010 1000 0000 0001 0010 0011\
-hex: 0x21280123\
+hex: 0x21280123
 
 001000|01001|01000|0000000100100011\
 '-----------------------------------'\
 opcode| reg9| reg8| immediate value\
 '-----------------------------------'\
-    6b|   5b|   5b|             16b\
+    6b|   5b|   5b|             16b
 
 You can notice that the immediate value can only be 16 bits long.
 
 ### MIPS R-format (3-register, R-type) Instructions
 In binary format:\
 op|rs|rt|rd|shamt|funct\
- 6| 5| 5| 5|    5|    6\
+ 6| 5| 5| 5|    5|    6
 
 op: operation code (opcode)\
 rs: first source register number\
