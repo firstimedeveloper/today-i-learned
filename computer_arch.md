@@ -15,3 +15,17 @@ addi $t1, $zero, 100
 addi $t2, $zero, 0x10
 add $t3, $t1, $t2
 ```
+
+# Multiplication
+`mul $d, $r, $s` can be used to multiply the values in register r and s and save the result into register d.
+
+`mult $r, $s` can be used to multiply values in the r and s register. However, since multiplication of two 32 bit values (since we are usign a 32 bit system) can exceed 32 bits, special registers called `HI` and `LO` are used.
+
+Then, the instructions, `mfhi $d` and `mflo $d` can be used to move the results into register d.
+
+If the result of the multiplication is greater than 32 bits, the overflowed bits will be stored in `HI`.
+
+# Division
+`div $r, $s` can be used to divide the value in register r by the value in register s. The result will go into register `LO` and the remainder into `HI`.
+
+The instructions `mflo` and `mfhi` can subsequently be used to make use of the resulting values.
