@@ -4,35 +4,35 @@
 Instructions are stored in memory in a binary format. In MIPS architecture, each instruction is 4 bytes (32 bits) long. In CISC computers, each instructions can vary from 1 byte to 15 bytes. These variable sizes can lead to more efficent use of space, and faster code. However a lot of work has to be done to figure out the size of the instruction, and the location of the next instruction. In comparison, in MIPS or other RISC computers, the size of each instruction is predetermined which means that there will be 'wasted' bits in some instructons. However, the overall computer architecher is much simpler which by itself is a great advantage.
 ### MIPS I-format Instructions
 
-In binary format:
-op|rs|rt|constant or address
- 6| 5| 5| 				  16
+In binary format:\
+op|rs|rt|constant or address\
+ 6| 5| 5| 				  16\
 
 The instruction `addi $t0, $t1, 0x123` is represented as follows:
 
-binary: 0010 0001 0010 1000 0000 0001 0010 0011
-hex: 0x21280123
+binary: 0010 0001 0010 1000 0000 0001 0010 0011\
+hex: 0x21280123\
 
-001000|01001|01000|0000000100100011
-'-----------------------------------'
-opcode| reg9| reg8| immediate value
-'-----------------------------------'
-    6b|   5b|   5b|             16b
+001000|01001|01000|0000000100100011\
+'-----------------------------------'\
+opcode| reg9| reg8| immediate value\
+'-----------------------------------'\
+    6b|   5b|   5b|             16b\
 
 You can notice that the immediate value can only be 16 bits long.
 
 ### MIPS R-format (3-register, R-type) Instructions
-In binary format:
-op|rs|rt|rd|shamt|funct
- 6| 5| 5| 5|    5|    6
+In binary format:\
+op|rs|rt|rd|shamt|funct\
+ 6| 5| 5| 5|    5|    6\
 
-op: operation code (opcode)
-rs: first source register number
-rt: second source register number
-rd: destination register number
-shamt: shift amount (00000 for now)
+op: operation code (opcode)\
+rs: first source register number\
+rt: second source register number\
+rd: destination register number\
+shamt: shift amount (00000 for now)\
 shamt is wasted in arithmetic instructions.
-funct: function code (extends opcode)
+funct: function code (extends opcode)\
 You can notice that the opcode can have 2^6=64 different types of instructions in the CPU. However, since this number may not be enough. So the `funct` in the LSB can be used to 'extend' the opcode. For example, add and sub has the same opcode, but they are distinguished from the funct.
 
 
