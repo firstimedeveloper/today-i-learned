@@ -26,3 +26,4 @@ ip주소는 크게 public ip와 private ip로 나누어진다. private ip addres
 
 ### Reference
 - https://superuser.com/questions/935581/external-ip-addresses-subnet-masks-and-ssh-how-does-it-all-wor
+- https://github.com/alex/what-happens-when/blob/master/README.rst#check-hsts-list
