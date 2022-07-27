@@ -33,6 +33,52 @@
 #### 컨테이너
 컨테이너는 runnable instance of an image이다. 이미지가 컨테이너를 실행할 수 있는 명령문에 해당이 된다면, 컨테이너는 만들어진 이미지에 해당이된다. 컨테이너는 기본적으로 다른 컨테이너, 호스트 머신과 분리가 되어있고, 네트워크, 스토리지 등을 사용할 수 있도록 추가적인 관리가 가능하다. 따로 persistent storage에 저장을 하지 않는다면 도커에서 달라진 state는 container를 지우게되면 사라진다.
 
+## 도커를 활용하여 간단한 스프링 앱 실행하기
+[https://start.spring.io](https://start.spring.io)에서 새로운 프로젝트 생성
+### pom.xml 수정
+HTTP 통신을 위한 pom.xml 파일 내 spring-boot-starter-web lib dependency 추가.
+```
+    <dependencies>
+...    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+...
+    <dependencies>
+```
+### Controller
+src 내에 홈디렉토리 라투팅하는 간단한 컨트롤러 만들기
+```
+package com.example.springbootdocker.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+public class HomeController {
+
+    @GetMapping(value = "/")
+    public String home() {
+        return "Hello Docker !!";
+    }
+}
+```
+### Dockerfile
+```
+FROM openjdk:11-jre # 도커 레지스트리에서 openjdk 11 이미지를 불러온다
+COPY target/*.jar app.jar #target directory 내에 .jar 확장자를 가진 파일을 app.jar이라는 파일로 복사
+ENTRYPOINT ["java","-jar","ap p.jar"] # 도커가 해당 이미지를 실행할 때 이 명령어를 실행
+```
+### 프로젝트 생성 및 도커 실행
+```
+$mvn package
+$docker build -t demo
+$docker run -p 8080:8080 demo
+
+# docker commands
+$docker images # list docker images
+$docker ps # list running docker containers
+$docker stop container-id-or-name
+```
 
