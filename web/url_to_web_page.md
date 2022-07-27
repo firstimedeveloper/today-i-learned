@@ -39,6 +39,14 @@ ip주소는 크게 public ip와 private ip로 나누어진다. private ip addres
       - client <- Server: TCP SYN ACK
       - client -> Server: TCP ACK
    - https 같은 경우는 TLS Handshake를 추가로 함
+1. 브라우저에서 서버로 HTTP request를 보냄.
+   - GET request
+1. 서버에서 Apache/Nginx와 같은 웹서버를 이용해서 request를 handle한다.
+1. 서버에서 다시 브라우저에게 HTTP request를 보낸다.
+   - reponse contains web page, status code, compression type (content-encoding), cache-control, etc
+1. 브라우저에서 HTML 컨텐츠를 디스플레이 한다.
+   - 먼저 HTML만 렌더가 되고나서, 안에 있는 HTML 태그를 확인하면서 필요한 것들에 대한 GET request를 더 보낸다.
+   - 여기서 이미지, CSS stylesheets, javascript files 등에 대한 request가 보내진다.
 
 
 ### Reference
@@ -48,4 +56,4 @@ ip주소는 크게 public ip와 private ip로 나누어진다. private ip addres
 - [ssl/tls] https://www.cloudflare.com/learning/ssl/what-is-ssl/
 - [http] https://www.cloudflare.com/learning/ssl/what-is-https/
 - [tcp] https://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-22%ED%8E%B8-TCP-3-WayHandshake-4-WayHandshake
-- 
+- https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a
