@@ -81,4 +81,19 @@ $docker images # list docker images
 $docker ps # list running docker containers
 $docker stop container-id-or-name
 ```
-
+## Site의 개발과 배포 흐름
+- 개발:
+    - sudo dockerd 를 돌려서 도커데몬을 시작한다
+    - yarn reset 을 돌린다
+    - 백엔드 리포 내의 package.json을 보게되면 yarn reset 을 돌릴때 어떤 서브코맨드가 실행되는지 볼 수 있다.
+    - "reset": "yarn && yarn down && yarn down:network  && yarn up:network && yarn up && yarn start:withFeatureData" 
+    - "down": "yarn stop:dynamodb" 
+        - "stop:dynamodb": "docker-compose down" 
+    - "down:network": "docker network rm dynetwork" 
+    - "up:network": "docker network create dynetwork" 
+    - "up": "yarn start:dynamodb" 
+        - "start:dynamodb": "docker-compose up -d" 
+    - "start:withFeatureData": "yarn init:dynamodb && yarn start:ts" 
+        - "start:ts": "yarn build:config config/webpack.config.release.js && yarn build:layer" 
+            - "build:config": "yarn clean && webpack --mode development --display-error-details --bail --config" 
+        - "build:layer": "yarn clean:layer && mkdir -p ./layer/dependencies/nodejs && tsc -t ES6 -m commonjs ./layer/support/buildLayer && node ./layer/support/buildLayer.js && cd ./layer/dependencies/nodejs && npm install" 
