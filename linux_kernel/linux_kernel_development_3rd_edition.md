@@ -35,6 +35,18 @@ processes provide two virtualizations: a virtualized processor and virtual memor
 1) The virtual processor gives the process the illusion that it alone monopolizes the system, despite possibly sharing the processor among hundreds of other processes.
 1) Virtual memory lets the process allocate and manage memory as if it alone owned all the memory in the system.
 
-**Interestingly, note that threads share the virtual memory abstraction, whereas each receives its own virtualized processor.**
+51 - **Interestingly, note that threads share the virtual memory abstraction, whereas each receives its own virtualized processor.**
 
 A program itself is not a process; a process is an active program and related resources.
+
+##### Process Descriptor and the Task Structure
+
+The kernel stores the list of processes in a circular doubly linked list called the task list. Each element in the task list is a process descriptor of the type `struct task_struct`, defined in `<linux/sched.h>`.
+The `task_struct` is a relatively large data structure, at around 1.7 kilobytes on a 32-bit machine. The process descriptor contains the data that describes the executing program
+- open files
+- the process's address space,
+- pending signals
+- the process's state
+- and more
+<img width="300" alt="Screen Shot 2022-08-10 at 12 14 58 AM" src="https://user-images.githubusercontent.com/8170405/183688429-2b013185-35eb-48a1-9d4b-458fd9b9bb31.png">
+
