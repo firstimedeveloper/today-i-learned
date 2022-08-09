@@ -21,3 +21,10 @@ A number identifies interrupts and the kernel uses this number to execute a spec
 - In kernel-space, in interrupt context, not associated with a process, handling an interrupt
 
 This list is inclusive. Even corner cases fit into one of these three activities: For example, when idle, it turns out that the kernel is executing an idle process in process context in the kernel.
+
+
+#### Chapter 3: Process Management
+50 - process is a program in the midst of execution. They also include a set of resources such as open files and pending signals, internal kernel data, processor state, a memory address space with one or more memory
+mappings, one or more threads of execution, and a data section containing global variables. **Processes, in effect, are the living result of running program code.**
+
+Threads of execution, [or threads], are the objects of activity within the process. Each thread includes a unique program counter, process stack, and set of processor registers. **The kernel schedules individual threads, not processes.**
