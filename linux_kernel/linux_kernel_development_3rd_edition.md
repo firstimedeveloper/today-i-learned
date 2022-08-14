@@ -4,6 +4,7 @@
 
 [page number - Quotation]
 
+#### Chapters 1-2
 23 - We value and measure people by the usefulness of their contributions, and when you contribute to Linux, you do so in the knowledge that your work is of small but immediate benefit to tens or even hundreds of millions of human beings.
 
 25 - Find an itch and scratch it! Only when you write code will it all come together.
