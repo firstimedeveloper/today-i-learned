@@ -19,3 +19,7 @@ scheduling:
   - sjf: smallest average turnaround time for a non-preemptive
     - problem: 간발의 차로 큰 job가 들어오면, 결국 다 늦어짐.
     - 
+
+---
+starvation
+- long running jobs never recieving any cpu time
