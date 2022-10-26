@@ -16,3 +16,17 @@ remove(a)             # remove first occurrence of element a
 count(a)              # count all occurrences of element a
 
 ```
+
+
+## PriorityQueue
+```
+from queue import PriorityQueue
+
+q = PriorityQueue(maxsize=10)
+#push
+put()
+
+#pop
+pop()
+
+```
