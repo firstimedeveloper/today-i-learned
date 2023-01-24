@@ -1,0 +1,43 @@
+# Installation
+1. Clone the latest stable release of the kernel
+```shell
+git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git linux_stable
+cd linux_stable
+git branch -a | grep linux -5
+git checkout linux-5.12.y
+```
+
+2. Copy the configuration for the current kernel from /boot
+
+```shell
+ls /boot
+cp /boot/config-5.0.0-21-generic .config
+```
+3. Compile the Kernel
+
+Using the current configurations of your system has a good chance of working correctly for building the new kernel.
+
+```shell
+# do either
+make oldconfig
+# or to create a config file based on the list of modules
+# currently loaded on your system,
+lsmod > /tmp/my-lsmod
+make LSMOD=/tmp/my-lsmod localmodconfig
+
+# then
+make -j3 all 
+# the j option specifies the number of jobs to run for compilation
+
+```
+4. Install the new Kernel
+
+```shell
+# adding sudo before su may be necessary
+su -c "make modules_install install"
+```
+
+### troubleshooting
+- [setting up git-email correctly with gmail](https://stackoverflow.com/questions/68238912/how-to-configure-and-use-git-send-email-to-work-with-gmail-to-email-patches-to)
+- [fixing certification error](https://unix.stackexchange.com/questions/293642/attempting-to-compile-kernel-yields-a-certification-error)
+- [authentication error when using 'su'](https://askubuntu.com/questions/446570/why-does-su-fail-with-authentication-error)
