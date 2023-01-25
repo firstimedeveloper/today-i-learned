@@ -42,3 +42,4 @@ su -c "make modules_install install"
 - [fixing certification error](https://unix.stackexchange.com/questions/293642/attempting-to-compile-kernel-yields-a-certification-error)
 - [authentication error when using 'su'](https://askubuntu.com/questions/446570/why-does-su-fail-with-authentication-error)
 - [fixing certification error 2](https://superuser.com/questions/1214116/no-openssl-sign-file-signing-key-pem-leads-to-error-while-loading-kernel-modules/1322832#1322832)
+- [compiling error](https://stackoverflow.com/questions/68157695/error-scripts-makefile-modinst33-arch-x86-crypto-aegis128-aesni-ko)
