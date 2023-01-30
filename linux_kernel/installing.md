@@ -37,6 +37,14 @@ make -j3 all
 su -c "make modules_install install"
 ```
 
+5. Seeing the `dmesg` log output from a previous session
+```
+# last boot
+sudo journalctl -o short-precise -k -b -1
+# all boots
+sudo journalctl -o short-precise -k -b -all
+```
+
 ### troubleshooting
 - [setting up git-email correctly with gmail](https://stackoverflow.com/questions/68238912/how-to-configure-and-use-git-send-email-to-work-with-gmail-to-email-patches-to)
 - [fixing certification error](https://unix.stackexchange.com/questions/293642/attempting-to-compile-kernel-yields-a-certification-error)
@@ -44,3 +52,4 @@ su -c "make modules_install install"
 - [fixing certification error 2](https://superuser.com/questions/1214116/no-openssl-sign-file-signing-key-pem-leads-to-error-while-loading-kernel-modules/1322832#1322832)
 - [compiling error](https://stackoverflow.com/questions/68157695/error-scripts-makefile-modinst33-arch-x86-crypto-aegis128-aesni-ko)
 - [adding signature to your own module](https://stackoverflow.com/questions/24975377/kvm-module-verification-failed-signature-and-or-required-key-missing-taintin)
+- [dmesg from previous boots](https://unix.stackexchange.com/questions/181067/how-to-read-dmesg-from-previous-session-dmesg-0)
