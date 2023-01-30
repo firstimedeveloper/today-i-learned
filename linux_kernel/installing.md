@@ -43,3 +43,4 @@ su -c "make modules_install install"
 - [authentication error when using 'su'](https://askubuntu.com/questions/446570/why-does-su-fail-with-authentication-error)
 - [fixing certification error 2](https://superuser.com/questions/1214116/no-openssl-sign-file-signing-key-pem-leads-to-error-while-loading-kernel-modules/1322832#1322832)
 - [compiling error](https://stackoverflow.com/questions/68157695/error-scripts-makefile-modinst33-arch-x86-crypto-aegis128-aesni-ko)
+- [adding signature to your own module](https://stackoverflow.com/questions/24975377/kvm-module-verification-failed-signature-and-or-required-key-missing-taintin)
